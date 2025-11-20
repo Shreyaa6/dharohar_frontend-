@@ -1,0 +1,229 @@
+@import url('https://fonts.googleapis.com/css2?family=Amita:wght@400;700&display=swap');
+
+/* Global styles from index.css */
+html, body {
+  margin: 0;
+  min-height: 100%;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #0c0b09;
+  color: #f4efe5;
+  overflow-x: hidden;
+}
+
+#root {
+  min-height: 100vh;
+  background-color: #0c0b09;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+.App {
+  text-align: center;
+}
+
+.home-container {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+.background-image {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  transform-origin: center center;
+  z-index: 0;
+}
+
+.content {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  width: 100%;
+}
+
+.shree-text {
+  font-family: 'Amita', cursive;
+  font-size: clamp(3rem, 18vw, 8rem);
+  font-weight: 700;
+  color: #ffba08;
+  letter-spacing: 2px;
+  text-align: center;
+  text-shadow: 
+    3px 3px 6px rgba(0, 0, 0, 0.5),
+    0 0 30px rgba(0, 0, 0, 0.4),
+    0 0 60px rgba(0, 0, 0, 0.3),
+    4px 4px 8px rgba(0, 0, 0, 0.6);
+  transition: opacity 0.3s ease-out;
+  user-select: none;
+  pointer-events: none;
+  position: relative;
+  z-index: 10;
+  margin-bottom: 32px;
+  margin-top: clamp(120px, 45vh, 400px);
+  padding: 0 24px;
+}
+
+.auth-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-top: 20px;
+  transition: opacity 0.3s ease-out;
+  position: relative;
+  z-index: 15;
+  background: rgba(255, 255, 255, 0.9);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.login-btn, .signup-btn {
+  font-family: 'Source Serif 4', serif;
+  font-size: 1.2rem;
+  font-weight: 600;
+  padding: 15px 30px;
+  border: 2px solid #3a5a40;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.login-btn {
+  background: transparent;
+  color: #3a5a40;
+}
+
+.login-btn:hover {
+  background: #3a5a40;
+  color: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(58, 90, 64, 0.4);
+}
+
+.signup-btn {
+  background: #3a5a40;
+  color: #ffffff;
+}
+
+.signup-btn:hover {
+  background: transparent;
+  color: #3a5a40;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(58, 90, 64, 0.4);
+}
+
+.scroll-spacer {
+  height: 200vh; /* Creates space for scrolling */
+  background: #0c0b09;
+  position: relative;
+  z-index: 1;
+}
+
+.scroll-debug {
+  position: fixed;
+  top: 12px;
+  right: 12px;
+  background: rgba(0, 0, 0, 0.8);
+  color: #ffffff;
+  padding: 10px 14px;
+  border-radius: 6px;
+  font-size: 12px;
+  z-index: 1000;
+  font-family: 'Space Mono', 'Courier New', monospace;
+  text-align: left;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.35);
+}
+
+/* Responsive design */
+@media (max-width: 1024px) {
+  .content {
+    padding: 0 24px;
+  }
+
+  .auth-buttons {
+    padding: 16px;
+  }
+}
+
+@media (max-width: 768px) {
+  .home-container {
+    min-height: 100vh;
+  }
+
+  .content {
+    padding: 0 16px;
+  }
+
+  .shree-text {
+    letter-spacing: 0.05em;
+  }
+
+  .auth-buttons {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .login-btn,
+  .signup-btn {
+    width: 100%;
+    font-size: 1rem;
+    padding: 14px 20px;
+  }
+
+  .scroll-debug {
+    top: auto;
+    bottom: 12px;
+    right: 12px;
+  }
+}
+
+@media (max-width: 600px) {
+  .home-container {
+    padding-top: 40px;
+  }
+
+  .shree-text {
+    letter-spacing: 0.02em;
+  }
+
+  .auth-buttons {
+    background: rgba(255, 255, 255, 0.85);
+    padding: 16px 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .shree-text {
+    letter-spacing: 0;
+    padding: 0 12px;
+  }
+
+  .auth-buttons {
+    padding: 12px;
+    gap: 12px;
+  }
+
+  .scroll-debug {
+    display: none;
+  }
+}
